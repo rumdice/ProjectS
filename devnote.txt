@@ -1,0 +1,99 @@
+2021.08.03
+스칼라 찍먹
+
+스칼라를 할라면 어떤 것이 셋팅 되어야 하는가?
+
+먼저 작업자 pc만 셋팅만 차후에 리눅스 서버에 필요 셋팅 정리하기
+
+
+java 설치
+https://java.com/ko/download/ie_manual.jsp?locale=ko
+
+
+java version 확인
+cmd
+> java -version
+
+
+스칼라 설치
+https://www.scala-lang.org/download/
+scala3 다운로드 선택
+
+https://get-coursier.io/docs/cli-installation
+window에 설치 할라면 흠. 커맨드가 보임 (파워쉘 말고 cmd.exe에서 하라고 나옴)
+
+cmd
+> bitsadmin /transfer cs-cli https://git.io/coursier-cli-windows-exe "%cd%\cs.exe"
+뭐가 남은 시간이 막 뜸
+Transfer complete. 뜨는 거 확인
+
+> .\cs --help
+뭔가 도움말 옵션 같은게 뜸
+
+버전 확인
+> .\cs --version
+2.0.13
+
+scala 라는 커맨드를 쳤을때 뭔가 나와야 함. 흠.
+마치 node 커맨드 치면 바로 노드 쓸 수 있게
+안됨
+
+자세히 보니 페이지 맨 아래에 링크가 보임
+https://github.com/coursier/coursier/releases/download/v2.0.13/cs-x86_64-pc-win32.exe
+
+윈도우 패키지 다운로드 경로(^^7)
+즉시 실행
+
+뭐 cmd 창 뜨고 막 설치 됨
+
+cmd
+> scala
+
+Welcome 어쩌구 하면서 노드처럼 뭐 뜸. 커맨드 테스트 해보기
+scala>1+1
+var res0: Int = 2 (당연히 잘 됨)
+이 설치 과정에서 환경 변수가 셋팅 되었으므로 리부팅 함
+
+
+IDE 셋팅이 필요한데...흠.
+
+vscode 에서 가장 필요해 보이는 패키지 설치
+Scala Syntax
+
+파일 확장자는 .scala 같음
+
+파일 생성
+test.scala
+
+vscode 상의 터미널 창에서 실행 - 실패
+cmd
+> scala
+> test.scala
+
+jvm에 대한 이해와 인지 부족, 컴파일 과정이 필요함
+코드도 자바 스타일로 수정
+
+> scalac test.scala
+
+빌드 후 결과물이 나옴
+HelloWorld$.class 
+HelloWorld.class 
+
+마치 typescript의 빌드 결과물인
+.js.map
+
+기존 .net에서 빌드 결과물
+.pdb
+
+같은 건가부다. 그래서 git생성시 gitignore 스칼라 타입에 자동으로 기입된듯.
+
+검색..
+빌드된 결과물을 실행하기
+
+>scala {클래스 이름}
+>scala HelloWorld
+(예상된 결과가 출력 됨)
+
+vscode에서 계속 쓸 수 있을까 고민이 되지만 일단 다른 툴보다 계속 vscode를 계속 써보기로 함
+ 
+
